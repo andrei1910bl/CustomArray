@@ -56,7 +56,6 @@ public class NewArray {
     return result;
   }
 
-  // Interface for Builder pattern
   public interface NewArrayBuilder {
     NewArrayBuilder setId(Long id);
     NewArrayBuilder setArray(int[] array);
@@ -68,7 +67,6 @@ public class NewArray {
     }
   }
 
-  // Implementation of Builder pattern
   public static class NewArrayBuilderImpl implements NewArrayBuilder {
     private static final Logger log = LoggerFactory.getLogger(NewArrayBuilderImpl.class);
 
