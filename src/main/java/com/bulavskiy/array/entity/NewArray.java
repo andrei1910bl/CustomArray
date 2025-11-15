@@ -2,14 +2,17 @@ package com.bulavskiy.array.entity;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class NewArray {
   private final Long id;
   private final int[] array;
 
-  NewArray(Long id, int[] array) {
+  private NewArray(Long id, int[] array) {
     this.id = id;
 
     if (array != null) {
@@ -56,30 +59,25 @@ public class NewArray {
     return result;
   }
 
-  public interface NewArrayBuilder {
-    NewArrayBuilder setId(Long id);
-    NewArrayBuilder setArray(int[] array);
-    NewArrayBuilder setArrayFromString(String file, String delimiter);
-    NewArray build();
-
-    static NewArrayBuilder builder() {
-      return new NewArrayBuilderImpl();
+    public static NewArrayBuilder builder() {
+      return new NewArrayBuilder();
     }
-  }
 
-  public static class NewArrayBuilderImpl implements NewArrayBuilder {
-    private static final Logger log = LoggerFactory.getLogger(NewArrayBuilderImpl.class);
+  public static class NewArrayBuilder {
+    private static final Logger log = LoggerFactory.getLogger(NewArrayBuilder.class);
+    private static final String DELIMETER_REGEX = "[^\\d-]+";
+    private static final String NUMBER_REGEX = "-?\\d+";
 
     private Long id;
     private int[] array;
 
-    @Override
+    private NewArrayBuilder(){}
+
     public NewArrayBuilder setId(Long id) {
       this.id = id;
       return this;
     }
 
-    @Override
     public NewArrayBuilder setArray(int[] array) {
       if (array != null) {
         this.array = array.clone();
@@ -89,27 +87,36 @@ public class NewArray {
       return this;
     }
 
-    @Override
-    public NewArrayBuilder setArrayFromString(String file, String delimiter) {
+    public NewArrayBuilder setArrayFromString(String file) {
       if (file == null || file.trim().isEmpty()) {
         this.array = new int[0];
-        log.warn("Файл равен null или пустой");
+        log.warn("File is null or empty");
         return this;
       }
       try {
-        String[] pars = file.split(Pattern.quote(delimiter));
-        this.array = new int[pars.length];
-        for (int i = 0; i < pars.length; i++) {
-          this.array[i] = Integer.parseInt(pars[i].trim());
+        String[] parts = file.split(DELIMETER_REGEX);
+
+        List<Integer> numbers = new ArrayList<>();
+        for (String part : parts){
+          if(!part.isEmpty() && part.matches(NUMBER_REGEX)){
+            numbers.add(Integer.parseInt(part));
+          }
         }
+
+        this.array = new int[numbers.size()];
+        for (int i =0; i < numbers.size(); i++){
+          this.array[i] = numbers.get(i);
+        }
+
+        log.info("Parsed {} numbers from '{}' ", this.array, file);
+
       } catch (NumberFormatException e) {
         this.array = new int[0];
-        log.error("Ошибка преобразования строк в массив чисел");
+        log.error("Error parsing String to Integer {}", e.getMessage());
       }
       return this;
     }
 
-    @Override
     public NewArray build() {
       return new NewArray(id, array);
     }

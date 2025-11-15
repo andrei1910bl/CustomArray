@@ -8,11 +8,15 @@ import com.bulavskiy.array.service.impl.ArrayCalculateServiceImpl;
 import com.bulavskiy.array.service.impl.ArrayReplaceServiceImpl;
 import com.bulavskiy.array.service.impl.ArraySearchServiceImpl;
 import com.bulavskiy.array.validation.ArrayDataValidator;
+import com.bulavskiy.array.validation.ArrayDataValidatorImpl;
 import org.slf4j.*;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class App {
@@ -24,52 +28,53 @@ public class App {
     ArrayReplaceService arrayReplaceService = new ArrayReplaceServiceImpl();
     ArrayCalculateService arrayCalculateService = new ArrayCalculateServiceImpl();
 
-    String file = readAndValidateFile(DATA);
+    List<String> fileArrays = readAndValidateFile(DATA);
+    for (int i = 0; i < fileArrays.size(); i++) {
+      String arrayData = fileArrays.get(i);
 
-    NewArray newArray = NewArray.NewArrayBuilder.builder()
-            .setId(1L)
-            .setArrayFromString(file, ",")
-            .build();
+      log.info(arrayData);
 
-    log.info(newArray.toString());
-    arraySearchService.findMinValue(newArray);
-    arraySearchService.findMaxValue(newArray);
-    arraySearchService.findNegative(newArray);
-    arraySearchService.findPositive(newArray);
+      NewArray newArray = NewArray.builder()
+              .setId((long) i +1 )
+              .setArrayFromString(arrayData)
+              .build();
 
-    NewArray newArray1 = arrayReplaceService.replaceElement(newArray, 2, 5);
-    log.info(newArray1.toString());
+      log.info(newArray.toString());
+      arraySearchService.findMinValue(newArray);
+      arraySearchService.findMaxValue(newArray);
+      arraySearchService.findNegative(newArray);
+      arraySearchService.findPositive(newArray);
 
-    NewArray newArray2 = arrayReplaceService.replaceOldElement(newArray1,4, 8);
-    log.info(newArray2.toString());
+      NewArray newArray1 = arrayReplaceService.replaceElement(newArray, 2, 5);
+      log.info(newArray1.toString());
 
-    arrayCalculateService.calculateSum(newArray);
-    arrayCalculateService.findAverage(newArray);
+      NewArray newArray2 = arrayReplaceService.replaceOldElement(newArray1, 4, 8);
+      log.info(newArray2.toString());
+
+      arrayCalculateService.calculateSum(newArray);
+      arrayCalculateService.findAverage(newArray);
+    }
   }
 
-  public static String readAndValidateFile(String filePath) {
-    String file;
+  public static List<String> readAndValidateFile(String filePath) {
+    List<String>  allLines = new ArrayList<>();
 
-    try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-      file = br.readLine();
+    String line;
+    try (BufferedReader br = Files.newBufferedReader(Paths.get(filePath))) {
+      ArrayDataValidator validator = new ArrayDataValidatorImpl();
+      while ((line = br.readLine()) != null){
+        if(validator.isValidArrayData(line)){
+          allLines.add(line);
+        }else {
+          log.warn("Line {} invalid", line);
+        }
+      }
     } catch (IOException e) {
-      log.error("Ошибка чтения файла", e);
+      //TODO: добавить trow new...
       return null;
     }
 
-    if (file == null){
-      log.warn("Файл пустой");
-      return null;
-    }
-
-    file = file.trim();
-
-    if(!ArrayDataValidator.isValidArrayData(file)){
-      log.warn("Невалидный формат данных в файле {}", file);
-      return null;
-    }
-
-    log.info("Файл успешно прочитан и записан {}", file);
-    return file;
+    log.info("Файл успешно прочитан и записан {}", filePath);
+    return allLines;
   }
 }

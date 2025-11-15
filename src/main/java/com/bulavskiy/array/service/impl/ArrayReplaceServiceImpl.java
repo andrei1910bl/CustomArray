@@ -13,7 +13,7 @@ public class ArrayReplaceServiceImpl implements ArrayReplaceService {
     int[] workArray = array.getArray();
     workArray[index] = value;
     log.info("В массиве {} заменили элемент под номером {} на элемент {}", array.toString(), index,  value);
-    return NewArray.NewArrayBuilder.builder()
+    return NewArray.builder()
             .setId(array.getId())
             .setArray(workArray)
             .build();
@@ -28,7 +28,7 @@ public class ArrayReplaceServiceImpl implements ArrayReplaceService {
       }
     }
     log.info("В массиве {} заменили все элементы равняющиеся {} на элементы {}", array.toString(), oldValue, newValue);
-    return NewArray.NewArrayBuilder.builder()
+    return NewArray.builder()
             .setId(array.getId())
             .setArray(workArray)
             .build();
