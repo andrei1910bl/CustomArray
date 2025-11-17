@@ -1,13 +1,18 @@
 package com.bulavskiy.array.service;
 
 import com.bulavskiy.array.entity.NewArray;
+import com.bulavskiy.array.exception.ArrayException;
 
 public interface ArraySearchService {
-  void findMinValue(NewArray array);
+  int findMinValue(NewArray array);
 
-  void findMaxValue(NewArray array);
+  int findMaxValue(NewArray array);
 
-  void findNegative(NewArray array);
+  int[] findNegative(NewArray array);
 
-  void findPositive(NewArray array);
+  int[] findPositive(NewArray array);
+
+  int findMinValueStream(NewArray array) throws ArrayException;
+
+  int[] findNegativeStream(NewArray array);
 }

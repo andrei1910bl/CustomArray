@@ -1,12 +1,11 @@
 package com.bulavskiy.array.entity;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class NewArray {
   private final Long id;
@@ -64,7 +63,7 @@ public class NewArray {
     }
 
   public static class NewArrayBuilder {
-    private static final Logger log = LoggerFactory.getLogger(NewArrayBuilder.class);
+    public static final Logger log = LogManager.getLogger();
     private static final String DELIMETER_REGEX = "[^\\d-]+";
     private static final String NUMBER_REGEX = "-?\\d+";
 
@@ -88,9 +87,9 @@ public class NewArray {
     }
 
     public NewArrayBuilder setArrayFromString(String file) {
-      if (file == null || file.trim().isEmpty()) {
+      if (file == null || file.trim().isEmpty()) { // метод .strip выдает у меня ошибку file.strip().isEmpty()
         this.array = new int[0];
-        log.warn("File is null or empty");
+        log.warn("Line is null or empty");
         return this;
       }
       try {

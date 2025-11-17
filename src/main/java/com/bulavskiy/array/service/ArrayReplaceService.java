@@ -7,4 +7,6 @@ public interface ArrayReplaceService {
   NewArray replaceElement(NewArray array, int index, int value);
 
   NewArray replaceOldElement(NewArray array, int oldValue, int newValue);
+
+  NewArray replaceOldElementStream(NewArray array, int oldValue, int newValue);
 }

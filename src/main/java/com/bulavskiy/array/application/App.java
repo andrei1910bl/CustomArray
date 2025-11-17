@@ -1,34 +1,33 @@
 package com.bulavskiy.array.application;
 
 import com.bulavskiy.array.entity.NewArray;
+import com.bulavskiy.array.exception.ArrayException;
+import com.bulavskiy.array.filereader.ArrayFileReader;
 import com.bulavskiy.array.service.ArrayCalculateService;
 import com.bulavskiy.array.service.ArrayReplaceService;
 import com.bulavskiy.array.service.ArraySearchService;
-import com.bulavskiy.array.service.impl.ArrayCalculateServiceImpl;
-import com.bulavskiy.array.service.impl.ArrayReplaceServiceImpl;
-import com.bulavskiy.array.service.impl.ArraySearchServiceImpl;
-import com.bulavskiy.array.validation.ArrayDataValidator;
-import com.bulavskiy.array.validation.ArrayDataValidatorImpl;
-import org.slf4j.*;
+import com.bulavskiy.array.service.ArraySortService;
+import com.bulavskiy.array.service.impl.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class App {
-  public static final Logger log = LoggerFactory.getLogger(App.class);
+  public static final Logger log = LogManager.getLogger();
   public static final String DATA = "data/array.txt";
 
-  public static void main( String[] args ) {
+  public static void main( String[] args ) throws ArrayException {
     ArraySearchService arraySearchService = new ArraySearchServiceImpl();
     ArrayReplaceService arrayReplaceService = new ArrayReplaceServiceImpl();
     ArrayCalculateService arrayCalculateService = new ArrayCalculateServiceImpl();
 
-    List<String> fileArrays = readAndValidateFile(DATA);
+    ArraySortService bubbleSort = new BubbleSort();
+    ArraySortService shuttleSort = new ShuttleSort();
+    ArraySortService insertionSort = new InsertionSort();
+
+    List<String> fileArrays = ArrayFileReader.readFile(DATA);
     for (int i = 0; i < fileArrays.size(); i++) {
       String arrayData = fileArrays.get(i);
 
@@ -39,8 +38,12 @@ public class App {
               .setArrayFromString(arrayData)
               .build();
 
+      bubbleSort.arraySort(newArray);
+      shuttleSort.arraySort(newArray);
+      insertionSort.arraySort(newArray);
+
       log.info(newArray.toString());
-      arraySearchService.findMinValue(newArray);
+      int a = arraySearchService.findMinValue(newArray);
       arraySearchService.findMaxValue(newArray);
       arraySearchService.findNegative(newArray);
       arraySearchService.findPositive(newArray);
@@ -56,25 +59,4 @@ public class App {
     }
   }
 
-  public static List<String> readAndValidateFile(String filePath) {
-    List<String>  allLines = new ArrayList<>();
-
-    String line;
-    try (BufferedReader br = Files.newBufferedReader(Paths.get(filePath))) {
-      ArrayDataValidator validator = new ArrayDataValidatorImpl();
-      while ((line = br.readLine()) != null){
-        if(validator.isValidArrayData(line)){
-          allLines.add(line);
-        }else {
-          log.warn("Line {} invalid", line);
-        }
-      }
-    } catch (IOException e) {
-      //TODO: добавить trow new...
-      return null;
-    }
-
-    log.info("Файл успешно прочитан и записан {}", filePath);
-    return allLines;
-  }
 }

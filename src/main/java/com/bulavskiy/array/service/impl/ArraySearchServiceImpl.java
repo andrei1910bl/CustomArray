@@ -1,37 +1,43 @@
 package com.bulavskiy.array.service.impl;
 
 import com.bulavskiy.array.entity.NewArray;
+import com.bulavskiy.array.exception.ArrayException;
 import com.bulavskiy.array.service.ArraySearchService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class ArraySearchServiceImpl implements ArraySearchService {
-  public static final Logger log = LoggerFactory.getLogger(ArraySearchServiceImpl.class);
+import java.util.Arrays;
+
+public class ArraySearchServiceImpl implements ArraySearchService{
+  public static final Logger log = LogManager.getLogger();
 
   @Override
-  public void findMinValue(NewArray array){
+  public int findMinValue(NewArray array){
     int min = array.getArray()[0];
     for(int i = 0; i < array.getLength(); i++){
       if(min > array.getArray()[i]){
         min = array.getArray()[i];
       }
     }
-    log.info("Найдено минимальное значение массива {}", min);
+    log.info("Find min value {}", min);
+    return min;
   }
 
+
   @Override
-  public void findMaxValue(NewArray array) {
+  public int findMaxValue(NewArray array) {
     int max = array.getArray()[0];
     for(int i = 0; i < array.getLength(); i++){
       if(max < array.getArray()[i]){
         max = array.getArray()[i];
       }
     }
-    log.info("Найдено максимальное значение массива {}", max);
+    log.info("Find max value {}", max);
+    return max;
   }
 
   @Override
-  public void findNegative(NewArray array) {
+  public int[] findNegative(NewArray array) {
     int count = 0;
 
     for (int i = 0; i < array.getLength(); i++){
@@ -49,11 +55,12 @@ public class ArraySearchServiceImpl implements ArraySearchService {
         j++;
       }
     }
-    log.info("Отрицательные числа массива {} равны {}", array, newWorkArray);
+    log.info("Negative elements of array {} is equal {}", array, newWorkArray);
+    return newWorkArray;
   }
 
   @Override
-  public void findPositive(NewArray array) {
+  public int[] findPositive(NewArray array) {
     int count = 0;
 
     for (int i = 0; i < array.getLength(); i++){
@@ -71,6 +78,29 @@ public class ArraySearchServiceImpl implements ArraySearchService {
         j++;
       }
     }
-    log.info("Положительные числа массива {} равны {}", array, newWorkArray);
+    log.info("Positive elements of array {} is equal {}", array, newWorkArray);
+    return newWorkArray;
+  }
+
+  @Override
+  public int findMinValueStream(NewArray array) throws ArrayException {
+    int min = Arrays.stream(array.getArray())
+            .min()
+            .orElseThrow(() -> new ArrayException("Array cannot be empty"));
+
+    log.info("Find min value {}", min);
+    return min;
+
+
+  }
+
+  @Override
+  public int[] findNegativeStream(NewArray array) {
+    int[] newWorkArray = Arrays.stream(array.getArray())
+            .filter(element -> element<0)
+            .toArray();
+    log.info("Negative elements of array {} is equal {}", array, newWorkArray);
+
+    return newWorkArray;
   }
 }

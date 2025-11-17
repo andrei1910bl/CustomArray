@@ -2,17 +2,19 @@ package com.bulavskiy.array.service.impl;
 
 import com.bulavskiy.array.entity.NewArray;
 import com.bulavskiy.array.service.ArrayReplaceService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
 
 public class ArrayReplaceServiceImpl implements ArrayReplaceService {
-  public static final Logger log = LoggerFactory.getLogger(ArrayReplaceServiceImpl.class);
+  public static final Logger log = LogManager.getLogger();
 
   @Override
   public NewArray replaceElement(NewArray array, int index, int value) {
     int[] workArray = array.getArray();
     workArray[index] = value;
-    log.info("В массиве {} заменили элемент под номером {} на элемент {}", array.toString(), index,  value);
+    log.info("In array {} replace element number {} with element {}", array.toString(), index,  value);
     return NewArray.builder()
             .setId(array.getId())
             .setArray(workArray)
@@ -27,7 +29,20 @@ public class ArrayReplaceServiceImpl implements ArrayReplaceService {
         workArray[i] = newValue;
       }
     }
-    log.info("В массиве {} заменили все элементы равняющиеся {} на элементы {}", array.toString(), oldValue, newValue);
+    log.info("In array {} replace all elements equal {} with {}", array.toString(), oldValue, newValue);
+    return NewArray.builder()
+            .setId(array.getId())
+            .setArray(workArray)
+            .build();
+  }
+
+  @Override
+  public NewArray replaceOldElementStream(NewArray array, int oldValue, int newValue) {
+    int[] workArray = Arrays.stream(array.getArray())
+            .map(element -> element == oldValue ? newValue : element)
+            .toArray();
+
+    log.info("In array {} replace all elements equal {} with {}", array.toString(), oldValue, newValue);
     return NewArray.builder()
             .setId(array.getId())
             .setArray(workArray)
