@@ -1,5 +1,7 @@
 package com.bulavskiy.array.entity;
 
+import com.bulavskiy.array.observer.ArrayObservable;
+import com.bulavskiy.array.observer.ArrayObserver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -7,9 +9,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class NewArray {
-  private final Long id;
-  private final int[] array;
+public class NewArray implements ArrayObservable {
+  public static long nextId = 1;
+
+  private Long id;
+  private int[] array;
+  List<ArrayObserver> observers = new ArrayList<>();
 
   private NewArray(Long id, int[] array) {
     this.id = id;
@@ -31,6 +36,11 @@ public class NewArray {
 
   public int getLength() {
     return array.length;
+  }
+
+  public void setArray(int[] array) {
+      this.array = Arrays.copyOf(array, array.length);
+    notifyObserver();
   }
 
   @Override
@@ -62,6 +72,24 @@ public class NewArray {
       return new NewArrayBuilder();
     }
 
+  @Override
+  public void addObserver(ArrayObserver observer) {
+    observers.add(observer);
+  }
+
+  @Override
+  public void removeObserver(ArrayObserver observer) {
+    observers.remove(observer);
+  }
+
+  @Override
+  public void notifyObserver() {
+    for(ArrayObserver observer : observers){
+      observer.update(this);
+    }
+
+  }
+
   public static class NewArrayBuilder {
     public static final Logger log = LogManager.getLogger();
     private static final String DELIMETER_REGEX = "[^\\d-]+";
@@ -74,6 +102,11 @@ public class NewArray {
 
     public NewArrayBuilder setId(Long id) {
       this.id = id;
+      return this;
+    }
+
+    public NewArrayBuilder setAutoId(){
+      this.id = nextId++;
       return this;
     }
 

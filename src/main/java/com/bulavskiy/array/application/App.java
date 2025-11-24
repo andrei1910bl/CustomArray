@@ -48,11 +48,11 @@ public class App {
       arraySearchService.findNegative(newArray);
       arraySearchService.findPositive(newArray);
 
-      NewArray newArray1 = arrayReplaceService.replaceElement(newArray, 2, 5);
-      log.info(newArray1.toString());
+      newArray = arrayReplaceService.replaceElement(newArray, 2, 5);
+      log.info(newArray.toString());
 
-      NewArray newArray2 = arrayReplaceService.replaceOldElement(newArray1, 4, 8);
-      log.info(newArray2.toString());
+       newArray = arrayReplaceService.replaceOldElement(newArray, 4, 8);
+      log.info(newArray.toString());
 
       arrayCalculateService.calculateSum(newArray);
       arrayCalculateService.findAverage(newArray);
