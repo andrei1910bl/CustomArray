@@ -5,27 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73ebca9a-7b9a-4794-b50e-14aeedebcbbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/filereader/impl/ArrayFileReaderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/repository/comparator/ArrayComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/repository/specification/impl/ByIdIntervalSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/application/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/application/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/entity/NewArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/entity/NewArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/filereader/ArrayFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/filereader/ArrayFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/observer/impl/ArrayObserverImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/observer/impl/ArrayObserverImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/repository/ArrayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/repository/ArrayRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/repository/specification/Specification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/repository/specification/Specification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/validation/impl/ArrayDataValidatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bulavskiy/array/validation/impl/ArrayDataValidatorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/application/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/application/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/entity/ArrayStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/entity/ArrayStatistics.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/entity/NewArray$NewArrayBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/entity/NewArray$NewArrayBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/entity/NewArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/entity/NewArray.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/exception/ArrayException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/exception/ArrayException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/filereader/ArrayFileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/filereader/ArrayFileReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/filereader/impl/ArrayFileReaderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/filereader/impl/ArrayFileReaderImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/observer/ArrayObservable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/observer/ArrayObservable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/observer/ArrayObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/observer/ArrayObserver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/observer/impl/ArrayObserverImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/observer/impl/ArrayObserverImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/parser/ArrayParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/parser/ArrayParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/parser/impl/ArrayParserImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/parser/impl/ArrayParserImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/ArrayRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/ArrayRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/comparator/ArrayComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/Specification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/Specification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/ByAverageMoreThanSpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/ByAverageMoreThanSpecification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/ByIdIntervalSpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/ByIdIntervalSpecification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/ByIdSpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/ByIdSpecification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/BySumSpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/repository/specification/impl/BySumSpecification.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/ArrayCalculateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/ArrayCalculateService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/ArrayReplaceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/ArrayReplaceService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/ArraySearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/ArraySearchService.class" afterDir="false" />
@@ -36,22 +41,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/impl/BubbleSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/impl/BubbleSort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/impl/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/impl/InsertionSort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/impl/ShuttleSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/service/impl/ShuttleSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/statistics/ArrayStatistics.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/validation/ArrayDataValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/validation/ArrayDataValidator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/validation/impl/ArrayDataValidatorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/validation/impl/ArrayDataValidatorImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/warehouse/Warehouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bulavskiy/array/warehouse/Warehouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/task01-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ArrayCalculateServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ArrayCalculateServiceImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ArrayReplaceServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ArrayReplaceServiceImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ArraySearchServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ArraySearchServiceImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/BubbleSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/BubbleSortTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/InsertionSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/InsertionSortTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ShuttleSortTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/bulavskiy/array/service/impl/ShuttleSortTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +102,7 @@
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ArrayDataValidatorImplTest">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bulavskiy.array.application.App" />
       <module name="task01" />
@@ -186,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.ArrayDataValidatorImplTest" />
         <item itemvalue="JUnit.ArrayRepositoryTest" />
         <item itemvalue="JUnit.ArrayParserImplTest" />
         <item itemvalue="JUnit.ArrayFileReaderImplTest" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
