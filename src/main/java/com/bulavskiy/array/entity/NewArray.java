@@ -1,17 +1,15 @@
 package com.bulavskiy.array.entity;
 
-import com.bulavskiy.array.observer.ArrayObservable;
-import com.bulavskiy.array.observer.ArrayObserver;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class NewArray implements ArrayObservable {
-  public static long nextId = 1;
+import com.bulavskiy.array.observer.ArrayObservable;
+import com.bulavskiy.array.observer.ArrayObserver;
+import com.bulavskiy.array.parser.ArrayParser;
+import com.bulavskiy.array.parser.impl.ArrayParserImpl;
 
+public class NewArray implements ArrayObservable {
   private Long id;
   private int[] array;
   List<ArrayObserver> observers = new ArrayList<>();
@@ -91,9 +89,7 @@ public class NewArray implements ArrayObservable {
   }
 
   public static class NewArrayBuilder {
-    public static final Logger log = LogManager.getLogger();
-    private static final String DELIMETER_REGEX = "[^\\d-]+";
-    private static final String NUMBER_REGEX = "-?\\d+";
+    private static final ArrayParser parser = new ArrayParserImpl();
 
     private Long id;
     private int[] array;
@@ -102,11 +98,6 @@ public class NewArray implements ArrayObservable {
 
     public NewArrayBuilder setId(Long id) {
       this.id = id;
-      return this;
-    }
-
-    public NewArrayBuilder setAutoId(){
-      this.id = nextId++;
       return this;
     }
 
@@ -120,32 +111,7 @@ public class NewArray implements ArrayObservable {
     }
 
     public NewArrayBuilder setArrayFromString(String file) {
-      if (file == null || file.trim().isEmpty()) { // метод .strip выдает у меня ошибку file.strip().isEmpty()
-        this.array = new int[0];
-        log.warn("Line is null or empty");
-        return this;
-      }
-      try {
-        String[] parts = file.split(DELIMETER_REGEX);
-
-        List<Integer> numbers = new ArrayList<>();
-        for (String part : parts){
-          if(!part.isEmpty() && part.matches(NUMBER_REGEX)){
-            numbers.add(Integer.parseInt(part));
-          }
-        }
-
-        this.array = new int[numbers.size()];
-        for (int i =0; i < numbers.size(); i++){
-          this.array[i] = numbers.get(i);
-        }
-
-        log.info("Parsed {} numbers from '{}' ", this.array, file);
-
-      } catch (NumberFormatException e) {
-        this.array = new int[0];
-        log.error("Error parsing String to Integer {}", e.getMessage());
-      }
+      this.array = parser.parse(file);
       return this;
     }
 

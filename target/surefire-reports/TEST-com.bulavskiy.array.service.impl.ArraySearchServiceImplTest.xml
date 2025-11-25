@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.044" tests="36" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray/target/test-classes:/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray/target/classes:/Users/macbookair/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.13.4/junit-jupiter-api-5.13.4.jar:/Users/macbookair/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/macbookair/.m2/repository/org/junit/platform/junit-platform-commons/1.13.4/junit-platform-commons-1.13.4.jar:/Users/macbookair/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/macbookair/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.13.4/junit-jupiter-params-5.13.4.jar:/Users/macbookair/.m2/repository/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/Users/macbookair/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Minsk"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BY"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray/target/surefire/surefirebooter-20251125173856053_3.jar /Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray/target/surefire 2025-11-25T17-38-56_002-jvmRun1 surefire-20251125173856053_1tmp surefire_0-20251125173856053_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray/target/test-classes:/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray/target/classes:/Users/macbookair/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.13.4/junit-jupiter-api-5.13.4.jar:/Users/macbookair/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/macbookair/.m2/repository/org/junit/platform/junit-platform-commons/1.13.4/junit-platform-commons-1.13.4.jar:/Users/macbookair/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/macbookair/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.13.4/junit-jupiter-params-5.13.4.jar:/Users/macbookair/.m2/repository/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/Users/macbookair/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/macbookair"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray/target/surefire/surefirebooter-20251125173856053_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="23.0.1+11-39"/>
+    <property name="user.name" value="macbookair"/>
+    <property name="stdout.encoding" value="US-ASCII"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.0.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/macbookair/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/71/5yh1rf9x6zn0yktzgqvz5dnh0000gn/T/"/>
+    <property name="idea.version" value="2024.2.4"/>
+    <property name="java.version" value="23.0.1"/>
+    <property name="user.dir" value="/Users/macbookair/Documents/java-course/firstTask/CustomArray/CustomArray"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="US-ASCII"/>
+    <property name="java.library.path" value="/Users/macbookair/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="US-ASCII"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23.0.1+11-39"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="findMinValueStream(Long, int[], int)[1]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.003">
+    <system-out><![CDATA[17:38:56.684 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value -2
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValueStream(Long, int[], int)[2]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.686 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 1
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValueStream(Long, int[], int)[3]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.003">
+    <system-out><![CDATA[17:38:56.687 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value -3
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValueStream(Long, int[], int)[4]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.690 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 5
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValueStream(Long, int[], int)[5]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.690 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 0
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValueStream(Long, int[], int)[6]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.691 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 1
+]]></system-out>
+  </testcase>
+  <testcase name="findNegativeStream(Long, int[], int[])[1]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.002">
+    <system-out><![CDATA[17:38:56.695 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=1, array=[4, -2, 3]} is equal [-2]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegativeStream(Long, int[], int[])[2]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.697 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=2, array=[-1, -2, -3]} is equal [-1, -2, -3]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegativeStream(Long, int[], int[])[3]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.698 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=3, array=[1, 2, 3]} is equal []
+]]></system-out>
+  </testcase>
+  <testcase name="findNegativeStream(Long, int[], int[])[4]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.699 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=4, array=[0, -5, 10]} is equal [-5]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegativeStream(Long, int[], int[])[5]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.700 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=5, array=[-1, 0, 1]} is equal [-1]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegativeStream(Long, int[], int[])[6]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.701 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=6, array=[]} is equal []
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValue(Long, int[], int)[1]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.703 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value -2
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValue(Long, int[], int)[2]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.705 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 1
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValue(Long, int[], int)[3]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.706 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value -3
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValue(Long, int[], int)[4]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.706 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 5
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValue(Long, int[], int)[5]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.708 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 0
+]]></system-out>
+  </testcase>
+  <testcase name="findMinValue(Long, int[], int)[6]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.709 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 1
+]]></system-out>
+  </testcase>
+  <testcase name="findMaxValue(Long, int[], int)[1]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.711 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value 4
+]]></system-out>
+  </testcase>
+  <testcase name="findMaxValue(Long, int[], int)[2]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.711 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value 3
+]]></system-out>
+  </testcase>
+  <testcase name="findMaxValue(Long, int[], int)[3]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.712 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value -1
+]]></system-out>
+  </testcase>
+  <testcase name="findMaxValue(Long, int[], int)[4]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.714 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value 5
+]]></system-out>
+  </testcase>
+  <testcase name="findMaxValue(Long, int[], int)[5]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.715 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value 0
+]]></system-out>
+  </testcase>
+  <testcase name="findMaxValue(Long, int[], int)[6]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.716 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value 10
+]]></system-out>
+  </testcase>
+  <testcase name="findPositive(Long, int[], int[])[1]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.717 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Positive elements of array NewArray{id=1, array=[4, -2, 3]} is equal [4, 3]
+]]></system-out>
+  </testcase>
+  <testcase name="findPositive(Long, int[], int[])[2]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.718 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Positive elements of array NewArray{id=2, array=[-1, -2, -3]} is equal []
+]]></system-out>
+  </testcase>
+  <testcase name="findPositive(Long, int[], int[])[3]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.718 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Positive elements of array NewArray{id=3, array=[1, 2, 3]} is equal [1, 2, 3]
+]]></system-out>
+  </testcase>
+  <testcase name="findPositive(Long, int[], int[])[4]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.719 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Positive elements of array NewArray{id=4, array=[0, -5, 10]} is equal [10]
+]]></system-out>
+  </testcase>
+  <testcase name="findPositive(Long, int[], int[])[5]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.720 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Positive elements of array NewArray{id=5, array=[-1, 0, 1]} is equal [1]
+]]></system-out>
+  </testcase>
+  <testcase name="findPositive(Long, int[], int[])[6]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.721 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Positive elements of array NewArray{id=6, array=[]} is equal []
+]]></system-out>
+  </testcase>
+  <testcase name="findNegative(Long, int[], int[])[1]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.722 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=1, array=[4, -2, 3]} is equal [-2]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegative(Long, int[], int[])[2]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.723 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=2, array=[-1, -2, -3]} is equal [-1, -2, -3]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegative(Long, int[], int[])[3]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.723 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=3, array=[1, 2, 3]} is equal []
+]]></system-out>
+  </testcase>
+  <testcase name="findNegative(Long, int[], int[])[4]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.724 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=4, array=[0, -5, 10]} is equal [-5]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegative(Long, int[], int[])[5]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.001">
+    <system-out><![CDATA[17:38:56.725 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=5, array=[-1, 0, 1]} is equal [-1]
+]]></system-out>
+  </testcase>
+  <testcase name="findNegative(Long, int[], int[])[6]" classname="com.bulavskiy.array.service.impl.ArraySearchServiceImplTest" time="0.0">
+    <system-out><![CDATA[17:38:56.725 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=6, array=[]} is equal []
+]]></system-out>
+  </testcase>
+</testsuite>

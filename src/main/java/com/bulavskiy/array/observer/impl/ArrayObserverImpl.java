@@ -20,7 +20,7 @@ public class ArrayObserverImpl implements ArrayObserver {
   private final ArraySearchService searchService = new ArraySearchServiceImpl();
 
   @Override
-  public void update(NewArray array) {
+  public void  update(NewArray array) {
     int sum = calculateService.calculateSum(array);
     double average = calculateService.findAverage(array);
     int min = searchService.findMinValue(array);

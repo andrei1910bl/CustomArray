@@ -1,6 +1,18 @@
-2025-11-17 21:49:12.674 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=1, array=[4, -2, 3]} is equal [-2]
-2025-11-17 21:49:12.682 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=2, array=[-1, -2, -3]} is equal [-1, -2, -3]
-2025-11-17 21:49:12.684 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=3, array=[1, 2, 3]} is equal []
-2025-11-17 21:49:12.686 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=4, array=[0, -5, 10]} is equal [-5]
-2025-11-17 21:49:12.689 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=5, array=[-1, 0, 1]} is equal [-1]
-2025-11-17 21:49:12.690 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Negative elements of array NewArray{id=6, array=[]} is equal []
+2025-11-25 17:42:51.429 [main] INFO  com.bulavskiy.array.service.impl.ArrayCalculateServiceImpl - Sum of all elements of array NewArray{id=1, array=[1, 2, 3]}, is equal 6
+2025-11-25 17:42:51.429 [main] INFO  com.bulavskiy.array.service.impl.ArrayCalculateServiceImpl - The average of array elements NewArray{id=1, array=[1, 2, 3]} is equal 2.0
+2025-11-25 17:42:51.430 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 1
+2025-11-25 17:42:51.430 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value 3
+2025-11-25 17:42:51.430 [main] INFO  com.bulavskiy.array.warehouse.Warehouse - Array statistics with id=1 added to warehouse
+2025-11-25 17:42:51.430 [main] INFO  com.bulavskiy.array.observer.impl.ArrayObserverImpl - Statistics updated for array NewArray{id=1, array=[1, 2, 3]}
+2025-11-25 17:42:51.430 [main] INFO  com.bulavskiy.array.repository.ArrayRepository - Array 1 added to repository
+2025-11-25 17:42:51.435 [main] INFO  com.bulavskiy.array.warehouse.Warehouse - Array statistics with id=1 remove from warehouse
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.repository.ArrayRepository - Array 1 removed from repository
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.service.impl.ArrayCalculateServiceImpl - Sum of all elements of array NewArray{id=2, array=[4, 5, 6]}, is equal 15
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.service.impl.ArrayCalculateServiceImpl - The average of array elements NewArray{id=2, array=[4, 5, 6]} is equal 5.0
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find min value 4
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.service.impl.ArraySearchServiceImpl - Find max value 6
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.warehouse.Warehouse - Array statistics with id=2 added to warehouse
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.observer.impl.ArrayObserverImpl - Statistics updated for array NewArray{id=2, array=[4, 5, 6]}
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.repository.ArrayRepository - Array 2 added to repository
+2025-11-25 17:42:51.436 [main] INFO  com.bulavskiy.array.warehouse.Warehouse - Array statistics with id=2 remove from warehouse
+2025-11-25 17:42:51.437 [main] INFO  com.bulavskiy.array.repository.ArrayRepository - Array 2 removed from repository

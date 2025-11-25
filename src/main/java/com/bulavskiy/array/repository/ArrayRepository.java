@@ -1,29 +1,32 @@
 package com.bulavskiy.array.repository;
 
-import com.bulavskiy.array.entity.NewArray;
-import com.bulavskiy.array.exception.ArrayException;
-import com.bulavskiy.array.repository.specification.Specification;
-import com.bulavskiy.array.warehouse.Warehouse;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.bulavskiy.array.entity.NewArray;
+import com.bulavskiy.array.exception.ArrayException;
+import com.bulavskiy.array.observer.ArrayObserver;
+import com.bulavskiy.array.observer.impl.ArrayObserverImpl;
+import com.bulavskiy.array.repository.specification.Specification;
+import com.bulavskiy.array.warehouse.Warehouse;
 
 public class ArrayRepository {
-  public static final Logger log = LogManager.getLogger();
-  public static ArrayRepository instance;
+  private static final Logger log = LogManager.getLogger();
+  private static ArrayRepository instance;
 
   private final List<NewArray> arrays = new ArrayList<>();
+  private final ArrayObserver observer = new ArrayObserverImpl();
 
   private ArrayRepository() {}
 
   public static ArrayRepository getInstance(){
     if(instance == null){
-      log.info("Create new instance");
       instance = new ArrayRepository();
     }
-    log.info("Return instance");
     return instance;
   }
 
@@ -31,25 +34,42 @@ public class ArrayRepository {
     if(array == null){
       throw new ArrayException("Array is null");
     }
-    array.notifyObserver();
-    arrays.add(array);
+
+    if(!arrays.contains(array)){
+      arrays.add(array);
+    } else {
+      log.info("Array {} already present in repository. Updating state.", array.getId());
+    }
+
+    array.removeObserver(observer);
+    array.addObserver(observer);
+    observer.update(array);
+    log.info("Array {} added to repository", array.getId());
   }
 
   public void remove(NewArray array) throws ArrayException{
     if(array == null){
       throw new ArrayException("Array is null");
     }
-    Warehouse.getInstance().remove(array.getId());
     arrays.remove(array);
+    array.removeObserver(observer);
+    Warehouse.getInstance().remove(array.getId());
+    log.info("Array {} removed from repository", array.getId());
   }
 
   public List<NewArray> query(Specification specification) {
-    List<NewArray> results = new ArrayList<>();
+    List<NewArray> result = new ArrayList<>();
     for (NewArray array : arrays) {
       if (specification.specify(array)) {
-        arrays.add(array);
+        result.add(array);
       }
     }
-    return results;
+    return result;
+  }
+
+  public List<NewArray> sort(Comparator<? super NewArray> comparator) {
+    var sorted = new ArrayList<>(arrays);
+    sorted.sort(comparator);
+    return sorted;
   }
 }

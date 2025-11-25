@@ -1,0 +1,10 @@
+com/bulavskiy/array/service/impl/ArrayReplaceServiceImplTest.class
+com/bulavskiy/array/parser/ArrayParserImplTest.class
+com/bulavskiy/array/service/impl/ArrayCalculateServiceImplTest.class
+com/bulavskiy/array/filereader/ArrayFileReaderImplTest.class
+com/bulavskiy/array/service/impl/InsertionSortTest.class
+com/bulavskiy/array/service/impl/ArraySearchServiceImplTest.class
+com/bulavskiy/array/service/impl/BubbleSortTest.class
+com/bulavskiy/array/repository/ArrayRepositoryTest.class
+com/bulavskiy/array/service/impl/ShuttleSortTest.class
+com/bulavskiy/array/validation/ArrayDataValidatorImplTest.class
